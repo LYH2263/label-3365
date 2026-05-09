@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传智餐厅助手 - 登录</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="panel" style="max-width: 460px; margin: 80px auto 0">
+        <h1>传智餐厅助手</h1>
+        <p class="muted">商家/顾客统一登录入口</p>
+        <form id="loginForm" data-testid="login-form">
+          <label>
+            用户名
+            <input name="username" required maxlength="32" data-testid="login-username" />
+          </label>
+          <label>
+            密码
+            <input name="password" type="password" required maxlength="64" data-testid="login-password" />
+          </label>
+          <button type="submit" data-testid="login-submit">登录</button>
+        </form>
+        <p id="message" class="error" data-testid="login-message"></p>
+        <p class="muted">没有账号？<a href="/register.html" data-testid="to-register">立即注册顾客账号</a></p>
+      </section>
+    </main>
+    <script type="module" src="/assets/js/login.js"></script>
+  </body>
+</html>

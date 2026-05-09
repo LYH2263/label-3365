@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传智餐厅助手 - 顾客注册</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="panel" style="max-width: 560px; margin: 40px auto 0">
+        <h1>顾客注册</h1>
+        <form id="registerForm" data-testid="register-form">
+          <div class="row">
+            <div class="col">
+              <label>
+                用户名
+                <input name="username" required maxlength="32" data-testid="register-username" />
+              </label>
+            </div>
+            <div class="col">
+              <label>
+                昵称
+                <input name="displayName" required maxlength="64" data-testid="register-display-name" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>
+                密码
+                <input name="password" type="password" required minlength="8" maxlength="64" data-testid="register-password" />
+              </label>
+            </div>
+            <div class="col">
+              <label>
+                确认密码
+                <input name="confirmPassword" type="password" required minlength="8" maxlength="64" data-testid="register-confirm-password" />
+              </label>
+            </div>
+          </div>
+          <label>
+            手机号
+            <input name="phone" maxlength="11" placeholder="例如：13800138000" data-testid="register-phone" />
+          </label>
+          <button type="submit" data-testid="register-submit">注册</button>
+        </form>
+        <p id="message" class="error" data-testid="register-message"></p>
+        <p class="muted"><a href="/login.html" data-testid="to-login">返回登录</a></p>
+      </section>
+    </main>
+    <script type="module" src="/assets/js/register.js"></script>
+  </body>
+</html>

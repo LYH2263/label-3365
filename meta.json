@@ -1,0 +1,27 @@
+{
+  "id": 3365,
+  "tech_type": "fullstack",
+  "prompt": "做一个java项目，要求：《传智餐厅助手》设有商家和顾客两类用户角色。商家登录后可进行菜品管理、订单管理、信息管理与登录管理四项主要操作。其中菜品管理包含查询、新增及编辑功能；订单管理支持查询与修改；信息管理则涵盖基本信息维护与密码修改。顾客端提供注册、点餐、订单管理、信息管理及登录管理等功能。其中点餐模块进一步包括菜品浏览、购物车添加与移除、订单提交等具体操作。用原生做就行，包括GUI界面，框架类的技术不要有，包含MySQL数据库",
+  "framework": "html_css_js",
+  "backend": "Java",
+  "database": "MySQL",
+  "platform": "",
+  "scores": {
+    "clarity": 4,
+    "complexity": 3.4,
+    "verifiability": 1.4,
+    "manual_verify": 1,
+    "automatable": 2,
+    "total": 3.59,
+    "grade": "B",
+    "reproducibility": 1,
+    "type_weight": 3.25,
+    "weighted_total": 11.67,
+    "complexity_rule": 3.0,
+    "complexity_llm": 4.0,
+    "feasibility": 4,
+    "feasibility_confidence": 0.72
+  },
+  "impl_score": 0,
+  "selection_review": null
+}

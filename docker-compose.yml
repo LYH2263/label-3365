@@ -1,0 +1,43 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: chuanzi-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: chuanzi
+      TZ: Asia/Shanghai
+    ports:
+      - "${MYSQL_HOST_PORT:-3307}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql:ro
+      - ./sql/seed.sql:/docker-entrypoint-initdb.d/2-seed.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chuanzi-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      APP_PORT: 8080
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: chuanzi
+      DB_USER: root
+      DB_PASSWORD: root
+      SESSION_TTL_HOURS: 24
+      APP_PASSWORD_SALT: chuanzi-default-salt
+      WEB_ROOT: /app/web
+    ports:
+      - "${APP_HOST_PORT:-8080}:8080"
+
+volumes:
+  mysql_data:

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传智餐厅助手 - 我的订单</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header-bar">
+        <h1>我的订单</h1>
+        <div class="inline-actions">
+          <a href="/customer/menu.html" data-testid="customer-orders-to-menu">返回点餐</a>
+          <a href="/account.html" data-testid="customer-orders-to-account">账户信息</a>
+          <button id="refreshBtn" type="button" data-testid="customer-orders-refresh">刷新</button>
+        </div>
+      </div>
+      <p id="message" class="error" data-testid="customer-orders-message"></p>
+      <div id="orders" data-testid="customer-orders-list"></div>
+    </main>
+    <script type="module" src="/assets/js/customer-orders.js"></script>
+  </body>
+</html>

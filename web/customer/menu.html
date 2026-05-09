@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传智餐厅助手 - 顾客点餐</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header-bar">
+        <h1>顾客点餐</h1>
+        <div class="inline-actions">
+          <a href="/customer/orders.html" data-testid="customer-menu-to-orders">我的订单</a>
+          <a href="/account.html" data-testid="customer-menu-to-account">账户信息</a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <h2>可售菜品</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>价格</th>
+              <th>描述</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="dishesBody" data-testid="customer-dishes-body"></tbody>
+        </table>
+      </section>
+
+      <section class="panel">
+        <h2>购物车</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>菜品</th>
+              <th>单价</th>
+              <th>数量</th>
+              <th>小计</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="cartBody" data-testid="customer-cart-body"></tbody>
+        </table>
+        <div class="header-bar" style="margin-top: 12px">
+          <strong>总计：<span id="cartTotal" data-testid="customer-cart-total">¥0.00</span></strong>
+          <button id="submitOrderBtn" type="button" data-testid="customer-submit-order">提交订单</button>
+        </div>
+        <p id="message" class="error" data-testid="customer-menu-message"></p>
+      </section>
+    </main>
+    <script type="module" src="/assets/js/customer-menu.js"></script>
+  </body>
+</html>

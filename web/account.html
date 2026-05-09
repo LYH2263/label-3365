@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传智餐厅助手 - 账户信息</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header-bar">
+        <h1>账户信息</h1>
+        <div class="inline-actions">
+          <a href="/customer/menu.html" data-testid="account-to-customer-menu" hidden>顾客点餐</a>
+          <a href="/merchant/dishes.html" data-testid="account-to-merchant-dishes" hidden>商家管理</a>
+          <button id="logoutBtn" class="danger" type="button" data-testid="account-logout">退出登录</button>
+        </div>
+      </div>
+
+      <section class="panel">
+        <p id="userMeta" class="muted" data-testid="account-user-meta"></p>
+      </section>
+
+      <section class="panel">
+        <h2>基础信息维护</h2>
+        <form id="profileForm" data-testid="account-profile-form">
+          <label>
+            昵称
+            <input name="displayName" required maxlength="64" data-testid="account-display-name" />
+          </label>
+          <label>
+            手机号
+            <input name="phone" maxlength="11" data-testid="account-phone" />
+          </label>
+          <button type="submit" data-testid="account-save-profile">保存资料</button>
+        </form>
+        <p id="profileMessage" class="error" data-testid="account-profile-message"></p>
+      </section>
+
+      <section class="panel">
+        <h2>修改密码</h2>
+        <form id="passwordForm" data-testid="account-password-form">
+          <label>
+            旧密码
+            <input name="oldPassword" type="password" required minlength="8" maxlength="64" data-testid="account-old-password" />
+          </label>
+          <label>
+            新密码
+            <input name="newPassword" type="password" required minlength="8" maxlength="64" data-testid="account-new-password" />
+          </label>
+          <label>
+            确认新密码
+            <input name="confirmPassword" type="password" required minlength="8" maxlength="64" data-testid="account-confirm-password" />
+          </label>
+          <button type="submit" data-testid="account-change-password">修改密码</button>
+        </form>
+        <p id="passwordMessage" class="error" data-testid="account-password-message"></p>
+      </section>
+    </main>
+    <script type="module" src="/assets/js/account.js"></script>
+  </body>
+</html>

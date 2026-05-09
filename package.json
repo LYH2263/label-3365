@@ -1,0 +1,20 @@
+{
+  "name": "chuanzi-restaurant-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "bash scripts/lint.sh",
+    "test": "bash scripts/test.sh",
+    "e2e": "playwright test --config=playwright.config.cjs",
+    "build": "bash scripts/build.sh",
+    "dev": "bash scripts/dev.sh",
+    "demo:fresh": "bash scripts/demo-fresh.sh",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down -v"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "eslint": "^8.57.1"
+  }
+}

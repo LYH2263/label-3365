@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传智餐厅助手 - 商家订单管理</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header-bar">
+        <h1>商家订单管理</h1>
+        <div class="inline-actions">
+          <a href="/merchant/dishes.html" data-testid="merchant-orders-to-dishes">菜品管理</a>
+          <a href="/account.html" data-testid="merchant-orders-to-account">账户信息</a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="header-bar">
+          <label>
+            状态筛选
+            <select id="statusFilter" data-testid="merchant-orders-filter">
+              <option value="">全部</option>
+              <option value="NEW">NEW</option>
+              <option value="CONFIRMED">CONFIRMED</option>
+              <option value="CANCELLED">CANCELLED</option>
+              <option value="DONE">DONE</option>
+            </select>
+          </label>
+          <button id="refreshBtn" type="button" data-testid="merchant-orders-refresh">刷新</button>
+        </div>
+      </section>
+
+      <p id="message" class="error" data-testid="merchant-orders-message"></p>
+      <div id="orders" data-testid="merchant-orders-list"></div>
+    </main>
+    <script type="module" src="/assets/js/merchant-orders.js"></script>
+  </body>
+</html>

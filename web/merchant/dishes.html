@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传智餐厅助手 - 商家菜品管理</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header-bar">
+        <h1>商家菜品管理</h1>
+        <div class="inline-actions">
+          <a href="/merchant/orders.html" data-testid="merchant-dishes-to-orders">订单管理</a>
+          <a href="/account.html" data-testid="merchant-dishes-to-account">账户信息</a>
+          <button id="refreshBtn" type="button" data-testid="merchant-dishes-refresh">刷新</button>
+        </div>
+      </div>
+
+      <section class="panel">
+        <h2>菜品查询</h2>
+        <form id="dishQueryForm" data-testid="merchant-dish-query-form">
+          <div class="row">
+            <div class="col">
+              <label>
+                关键字
+                <input
+                  name="keyword"
+                  maxlength="128"
+                  placeholder="按名称或描述搜索"
+                  data-testid="merchant-dish-filter-keyword"
+                />
+              </label>
+            </div>
+            <div class="col">
+              <label>
+                状态
+                <select name="isAvailable" data-testid="merchant-dish-filter-status">
+                  <option value="all">全部</option>
+                  <option value="true">可售</option>
+                  <option value="false">下架</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="inline-actions">
+            <button type="submit" data-testid="merchant-dish-search">查询</button>
+            <button id="resetFilterBtn" type="button" class="secondary" data-testid="merchant-dish-reset">重置</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>新增菜品</h2>
+        <form id="createDishForm" data-testid="merchant-create-dish-form">
+          <div class="row">
+            <div class="col">
+              <label>
+                名称
+                <input name="name" required maxlength="128" data-testid="merchant-dish-name" />
+              </label>
+            </div>
+            <div class="col">
+              <label>
+                价格（元）
+                <input
+                  name="priceYuan"
+                  required
+                  type="number"
+                  min="0.01"
+                  step="0.01"
+                  placeholder="例如：18.00"
+                  data-testid="merchant-dish-price"
+                />
+              </label>
+            </div>
+          </div>
+          <label>
+            描述
+            <textarea name="description" maxlength="512" data-testid="merchant-dish-description"></textarea>
+          </label>
+          <label>
+            <input type="checkbox" name="isAvailable" checked data-testid="merchant-dish-available" /> 上架可售
+          </label>
+          <div>
+            <button type="submit" data-testid="merchant-dish-submit">新增菜品</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>菜品列表</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>名称</th>
+              <th>价格</th>
+              <th>描述</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="dishListBody" data-testid="merchant-dish-list-body"></tbody>
+        </table>
+      </section>
+
+      <p id="message" class="error" data-testid="merchant-dishes-message"></p>
+    </main>
+    <script type="module" src="/assets/js/merchant-dishes.js"></script>
+  </body>
+</html>
